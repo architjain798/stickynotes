@@ -27,10 +27,15 @@ const auth = router.post(
     }
 
     User.create({
-      name: req.body.username,
-      password: req.body.password,
+      name: req.body.name,
       email: req.body.email,
-    }).then((user) => res.json(user));
+      password: req.body.password,
+    })
+      .then((user) => res.json(user))
+      .catch((err) => {
+        console.log(err);
+        res.json({ error: "Please enter unqiue value", message: err.message });
+      });
   }
 );
 
