@@ -9,7 +9,7 @@ const router = express.Router();
 const JWT_SECRET = "jwt_secret_key";
 
 //creates a user using POST "/api/auth/" doesn't require auth
-const auth = router.post(
+router.post(
   "/createuser",
   [
     //name must be of 5 characters
@@ -64,9 +64,58 @@ const auth = router.post(
       //if there are some exception thrown duw to some syntax mistake or anything else
       //it will come here and tell to client that there is this type of error
       console.log(error.message);
-      res.status(500).json({ error: "Some error occured" });
+      res.status(500).json({ error: "Internal Server Error" });
     }
   }
 );
 
-module.exports = auth;
+router.post(
+  "/login",
+  [
+    // email must be an email
+    body("email", "Enter valid email").isEmail(),
+  ],
+  async (req, res) => {
+    // Finds the validation errors in this request and wraps them in an object with handy functions
+    const errors = validationResult(req);
+    if (!errors.isEmpty()) {
+      return res.status(400).json({ errors: errors.array() });
+    }
+
+    //get all email and password from request object
+    const { email, password } = req.body;
+
+    try {
+      //finding the email from db
+      let user = await User.findOne({ email });
+
+      //if email is in db then it will return from here sending the status code to 500
+      if (!user) {
+        return res.status(400).json({ error: "Invalid credentials" });
+      }
+
+      //Used bcryot to compare the user entered password and hash passowrd
+      //create the hash of user password and compare with hash passowrd
+      const passwordCompare = await bcrypt.compare(password, user.password);
+      if (!passwordCompare) {
+        return res.status(400).json({ error: "Invalid credentials" });
+      }
+
+      //send the payload to generate token
+      const data = {
+        user: {
+          id: user.id,
+        },
+      };
+      const token = jwt.sign(data, JWT_SECRET);
+
+      //send the TOKEN back to the client
+      res.json({ token });
+    } catch (error) {
+      console.log(error.message);
+      return res.status(500).json({ error: "Internal Server Error" });
+    }
+  }
+);
+
+module.exports = router;
