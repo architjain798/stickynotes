@@ -21,4 +21,7 @@ const UserSchema = new Schema({
   },
 });
 
-module.exports = mongoose.model("user", UserSchema);
+//Added indexing so that unique email is getting stored in db
+const User = mongoose.model("user", UserSchema);
+User.createIndexes();
+module.exports = User;
