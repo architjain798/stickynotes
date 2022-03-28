@@ -4,6 +4,7 @@ const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 
 const User = require("../models/User");
+const fetchUser = require("../middleware/fetchUser");
 const router = express.Router();
 
 const JWT_SECRET = "jwt_secret_key";
@@ -120,5 +121,23 @@ router.post(
     }
   }
 );
+
+//Route-3 Fetch user details Login required
+router.post("/getuser", fetchUser, async (req, res) => {
+  try {
+    //{ user: { id: '623f285af51a55a09b6828ad' }, iat: 1648453934 } this is the data
+    //get the id from req object
+    let userId = req.user.id;
+
+    //find the user with the user id and select all the fields except the password
+    const user = await User.findById(userId).select("-password");
+
+    //send the user as response
+    res.send(user);
+  } catch (error) {
+    console.log(error.message);
+    return res.status(500).json({ error: "Internal Server Error" });
+  }
+});
 
 module.exports = router;
