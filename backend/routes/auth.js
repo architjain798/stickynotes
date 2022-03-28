@@ -8,7 +8,7 @@ const router = express.Router();
 
 const JWT_SECRET = "jwt_secret_key";
 
-//creates a user using POST "/api/auth/" doesn't require auth
+//Route-1 : creates a user using POST "/api/auth/" doesn't require auth
 router.post(
   "/createuser",
   [
@@ -30,10 +30,10 @@ router.post(
       return res.status(400).json({ errors: errors.array() });
     }
     try {
-      //findinf the email from db
+      //finding the email from db
       let user = await User.findOne({ email: req.body.email });
 
-      //if email is in db then it will return from here sending the status code to 500
+      //if email is not in db then it will return from here sending the status code to 500
       if (user) {
         return res.status(400).json({ error: "Sorry some error occured" });
       }
@@ -69,6 +69,7 @@ router.post(
   }
 );
 
+//Route-2 : Authenticate a user POST:"api/auth/login" No login required
 router.post(
   "/login",
   [
@@ -89,7 +90,7 @@ router.post(
       //finding the email from db
       let user = await User.findOne({ email });
 
-      //if email is in db then it will return from here sending the status code to 500
+      //if email is not in db then it will return from here sending the status code to 500
       if (!user) {
         return res.status(400).json({ error: "Invalid credentials" });
       }
@@ -97,6 +98,8 @@ router.post(
       //Used bcryot to compare the user entered password and hash passowrd
       //create the hash of user password and compare with hash passowrd
       const passwordCompare = await bcrypt.compare(password, user.password);
+
+      //to match the password
       if (!passwordCompare) {
         return res.status(400).json({ error: "Invalid credentials" });
       }
