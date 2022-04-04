@@ -122,7 +122,8 @@ router.post(
   }
 );
 
-//Route-3 Fetch user details Login required
+//Route-3 Fetch user details POST:"api/login/getuser" Login required
+//fetcherUser is the middleware used to verify the user
 router.post("/getuser", fetchUser, async (req, res) => {
   try {
     //{ user: { id: '623f285af51a55a09b6828ad' }, iat: 1648453934 } this is the data
