@@ -17,7 +17,7 @@ app.get("/", (req, res) => {
 
 //Availabe routes
 app.use("/api/auth", auth);
-app.use("/api/login", notes);
+app.use("/api/notes", notes);
 
 //port where server will be starting
 app.listen(8080, () => {
