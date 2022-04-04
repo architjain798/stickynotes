@@ -124,4 +124,33 @@ router.put(
   }
 );
 
+//Route-4 Delete a note for a user DELETE "api/notes/deletenote/:noteid" Login required
+router.delete("/deletenote/:noteid", fetchUser, async (req, res) => {
+  try {
+    //note ki id se db mein search kra ki uss id ka note exist krta hai ya nhi
+    const noteStatus = await Notes.findById(req.params.noteid);
+
+    //agar note exist nhi krta too
+    if (!noteStatus) {
+      return res.status(404).json({ errors: "Note does't exist" });
+    }
+
+    //ye check krenge ki jo note ki user id se user hai aur logined user hai vo same hai ya nhi
+    //agar nhi hai too 403 error
+    if (noteStatus.user.toString() !== req.user.id) {
+      return res
+        .status(403)
+        .json({ errors: "does't have permission to update note" });
+    }
+
+    const note = await Notes.findByIdAndDelete(req.params.noteid);
+
+    //send response to user
+    res.send({ success: "note has been deleted", note: note });
+  } catch (error) {
+    console.log(error.message);
+    return res.status(500).json({ error: "Internal Server Error" });
+  }
+});
+
 module.exports = router;
