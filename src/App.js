@@ -5,18 +5,17 @@ import Home from "./components/Home";
 import NavBar from "./components/NavBar";
 import NoteState from "./context/notes/NoteState";
 
-
 function App() {
   return (
     <>
-    <NoteState>
-      <BrowserRouter>
-        <NavBar />
-        <Routes>
-          <Route exact path="/about" element={<About />} />
-          <Route exact path="/home" element={<Home />} />
-        </Routes>
-      </BrowserRouter>
+      <NoteState>
+        <BrowserRouter>
+          <NavBar />
+          <Routes>
+            <Route exact path="/" element={<Home />} />
+            <Route exact path="/about" element={<About />} />
+          </Routes>
+        </BrowserRouter>
       </NoteState>
     </>
   );
