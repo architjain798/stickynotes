@@ -11,7 +11,7 @@ let app = express();
 //built-in middleware function in Express. It parses incoming requests with JSON payloads and is based on body-parser.
 app.use(express.json());
 
-app.get("/", (req, res) => {
+app.get("/", (_req, res) => {
   res.send("hello archit jain");
 });
 
