@@ -7,7 +7,7 @@ const notes = require("./routes/notes");
 connectToMongoDB();
 
 let app = express();
-
+let PORT = process.env.PORT || 8080;
 //built-in middleware function in Express. It parses incoming requests with JSON payloads and is based on body-parser.
 app.use(express.json());
 
@@ -20,6 +20,6 @@ app.use("/api/auth", auth);
 app.use("/api/notes", notes);
 
 //port where server will be starting
-app.listen(8080, () => {
-  console.log("server started");
+app.listen(PORT, () => {
+  console.log(`server started at port ${PORT}`);
 });
