@@ -1,6 +1,7 @@
 import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import About from "./components/About";
+import Alert from "./components/Alert";
 import Home from "./components/Home";
 import NavBar from "./components/NavBar";
 import NoteState from "./context/notes/NoteState";
@@ -11,6 +12,7 @@ function App() {
       <NoteState>
         <BrowserRouter>
           <NavBar />
+          <Alert message="A simple primary alert—check it out!" />
           <div className="container my-4">
             <Routes>
               <Route exact path="/" element={<Home />} />
