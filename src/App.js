@@ -7,7 +7,7 @@ import NoteState from "./context/notes/NoteState";
 
 function App() {
   return (
-    <>
+    <div style={{ backgroundColor: "#273026", color: "yellow" }}>
       <NoteState>
         <BrowserRouter>
           <NavBar />
@@ -19,7 +19,7 @@ function App() {
           </div>
         </BrowserRouter>
       </NoteState>
-    </>
+    </div>
   );
 }
 
