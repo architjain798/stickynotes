@@ -45,7 +45,9 @@ const Home = () => {
         </button>
       </form>
       <h3 className="my-3">Your Notes</h3>
-      <Notes />
+      <div className="container">
+        <Notes />
+      </div>
     </>
   );
 };

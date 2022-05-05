@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import noteContext from "../context/notes/noteContext";
-import NotesItem from "./NoteItem";
+import NoteItem from "./NoteItem";
 const Notes = () => {
   const context = useContext(noteContext);
 
@@ -8,13 +8,9 @@ const Notes = () => {
 
   return (
     <>
-      <div>
+      <div className="row">
         {data.map((x, i) => {
-          return (
-            <div key={i}>
-              <NotesItem data={x} />
-            </div>
-          );
+          return <NoteItem key={i} data={x} />;
         })}
       </div>
     </>
