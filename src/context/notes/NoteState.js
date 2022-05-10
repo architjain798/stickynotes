@@ -80,13 +80,13 @@ const NoteState = (props) => {
   const [data, setData] = useState(dataStatic);
 
   //Add a Note
-  const addNote = () => {
+  const addNote = ({ title, description, tag }) => {
     let note = {
       _id: "624aa0329a3c90d0efbf2c00",
       user: "624428a33aa412d3ddb7e55ADDED",
-      title: "My name is ADDED",
-      description: "dwie wehk eihjwe djasdja sdajksdnas ADDED",
-      tag: "today ADDED",
+      title: title,
+      description: description,
+      tag: tag,
       date: "1649057842721",
       __v: 0,
     };
