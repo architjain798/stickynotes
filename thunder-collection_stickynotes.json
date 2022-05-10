@@ -1,1 +1,170 @@
-{"client":"Thunder Client","collectionName":"stickynotes","dateExported":"2022-05-10T18:19:41.771Z","version":"1.1","folders":[{"_id":"eb69219b-ffaa-4061-ae8a-12cb199351bc","name":"Authentication","containerId":"","created":"2022-03-26T08:36:32.567Z","sortNum":10000},{"_id":"6ef7ba79-a0c5-494e-a799-04c0762ef911","name":"Notes","containerId":"","created":"2022-03-30T09:38:40.997Z","sortNum":30000}],"requests":[{"_id":"12ef9078-c61f-444f-b7d1-55a3885befaf","colId":"c749f07b-9ab6-42f5-9106-200559eeac02","containerId":"eb69219b-ffaa-4061-ae8a-12cb199351bc","name":"create new user","url":"http://localhost:8080/api/auth/createuser","method":"POST","sortNum":20000,"created":"2022-03-26T08:37:17.534Z","modified":"2022-03-30T09:53:39.213Z","headers":[{"name":"Content-Type","value":"application/json"}],"params":[],"body":{"type":"json","raw":"{\n    \"name\":\"shivam\",\n    \"email\":\"shivam@gmail.com\",\n    \"password\":\"shivam\"\n}","form":[]},"tests":[]},{"_id":"72011aa6-b921-4c88-b3cb-1b48a8fcf942","colId":"c749f07b-9ab6-42f5-9106-200559eeac02","containerId":"eb69219b-ffaa-4061-ae8a-12cb199351bc","name":"user login","url":"http://localhost:8080/api/auth/login","method":"POST","sortNum":40000,"created":"2022-03-26T15:01:18.821Z","modified":"2022-03-26T15:02:17.045Z","headers":[],"params":[],"body":{"type":"json","raw":"{\n    \"email\":\"sandeepa@gmail.com\",\n    \"password\":\"kriti1233\"\n}","form":[]},"tests":[]},{"_id":"90c86bca-7301-42d3-9d36-6659cee5cca5","colId":"c749f07b-9ab6-42f5-9106-200559eeac02","containerId":"eb69219b-ffaa-4061-ae8a-12cb199351bc","name":"Get user detail","url":"http://localhost:8080/api/auth/getuser","method":"POST","sortNum":50000,"created":"2022-03-28T08:35:50.670Z","modified":"2022-03-30T09:34:58.662Z","headers":[{"name":"auth-token","value":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjIzZjI4NWFmNTFhNTVhMDliNjgyOGFkIn0sImlhdCI6MTY0ODQ1MzkzNH0.zuTknXRst_vEOOdar0KXl4vpZKyKvtJdLQbDhSoFGIg"}],"params":[],"tests":[]},{"_id":"eab1c946-6373-49d0-919f-bf1c20db13ff","colId":"c749f07b-9ab6-42f5-9106-200559eeac02","containerId":"6ef7ba79-a0c5-494e-a799-04c0762ef911","name":"Fetch all notes","url":"http://localhost:8080/api/notes/fetchallnotes","method":"GET","sortNum":60000,"created":"2022-03-30T09:38:53.550Z","modified":"2022-04-04T07:37:26.238Z","headers":[{"name":"auth-token","value":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjI0NDI4YTMzYWE0MTJkM2RkYjdlNTViIn0sImlhdCI6MTY0ODYzNDAxOX0.nY18P3QzHOz7gZ_wsqP2JPwc_Tsu1chcOu6_6PjtTrQ"}],"params":[],"tests":[]},{"_id":"f376e3ea-4e57-46fd-bb44-69cc760625e0","colId":"c749f07b-9ab6-42f5-9106-200559eeac02","containerId":"6ef7ba79-a0c5-494e-a799-04c0762ef911","name":"Add new note","url":"http://localhost:8080/api/notes/addnote","method":"POST","sortNum":70000,"created":"2022-04-04T07:01:20.752Z","modified":"2022-04-04T07:37:22.724Z","headers":[{"name":"auth-token","value":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjI0NDI4YTMzYWE0MTJkM2RkYjdlNTViIn0sImlhdCI6MTY0ODYzNDAxOX0.nY18P3QzHOz7gZ_wsqP2JPwc_Tsu1chcOu6_6PjtTrQ"},{"name":"Content-Type","value":"application/json"}],"params":[],"body":{"type":"json","raw":"{\n    \"title\":\"My name is ritika\",\n    \"description\":\"ddsfsfsfsdfsdfsdfsdf a asj sdfdsfsdasd\",\n    \"tag\":\"today\"\n}","form":[]},"tests":[]},{"_id":"51c51e44-8898-49bb-8ad8-c13d83284065","colId":"c749f07b-9ab6-42f5-9106-200559eeac02","containerId":"6ef7ba79-a0c5-494e-a799-04c0762ef911","name":"Update Note","url":"http://localhost:8080/api/notes/update/624a99bc9a3c90d0efbf2c3f","method":"PUT","sortNum":80000,"created":"2022-04-04T08:00:40.081Z","modified":"2022-04-04T08:15:02.347Z","headers":[{"name":"auth-token","value":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjI0NDI4YTMzYWE0MTJkM2RkYjdlNTViIn0sImlhdCI6MTY0ODYzNDAxOX0.nY18P3QzHOz7gZ_wsqP2JPwc_Tsu1chcOu6_6PjtTrQ"},{"name":"Content-Type","value":"application/json"}],"params":[],"body":{"type":"json","raw":"{\n    \"title\":\"My name is ritika\",\n    \"description\":\"ddsfsfsfsdfsdfsdfsdf a asj sdfdsfsdasd\",\n    \"tag\":\"today\"\n}","form":[]},"tests":[]},{"_id":"7a28adb5-e883-45ed-b3a3-88478a9ae7c8","colId":"c749f07b-9ab6-42f5-9106-200559eeac02","containerId":"6ef7ba79-a0c5-494e-a799-04c0762ef911","name":"Delete a Note","url":"http://localhost:8080/api/notes/deletenote/624a99bc9a3c90d0efbf2c3f","method":"DELETE","sortNum":90000,"created":"2022-04-04T09:11:14.099Z","modified":"2022-04-04T09:23:16.014Z","headers":[{"name":"auth-token","value":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjI0NDI4YTMzYWE0MTJkM2RkYjdlNTViIn0sImlhdCI6MTY0ODYzNDAxOX0.nY18P3QzHOz7gZ_wsqP2JPwc_Tsu1chcOu6_6PjtTrQ"},{"name":"Content-Type","value":"application/json"}],"params":[],"tests":[]}]}
+{
+  "client": "Thunder Client",
+  "collectionName": "stickynotes",
+  "dateExported": "2022-05-10T18:19:41.771Z",
+  "version": "1.1",
+  "folders": [
+    {
+      "_id": "eb69219b-ffaa-4061-ae8a-12cb199351bc",
+      "name": "Authentication",
+      "containerId": "",
+      "created": "2022-03-26T08:36:32.567Z",
+      "sortNum": 10000
+    },
+    {
+      "_id": "6ef7ba79-a0c5-494e-a799-04c0762ef911",
+      "name": "Notes",
+      "containerId": "",
+      "created": "2022-03-30T09:38:40.997Z",
+      "sortNum": 30000
+    }
+  ],
+  "requests": [
+    {
+      "_id": "12ef9078-c61f-444f-b7d1-55a3885befaf",
+      "colId": "c749f07b-9ab6-42f5-9106-200559eeac02",
+      "containerId": "eb69219b-ffaa-4061-ae8a-12cb199351bc",
+      "name": "create new user",
+      "url": "http://localhost:8080/api/auth/createuser",
+      "method": "POST",
+      "sortNum": 20000,
+      "created": "2022-03-26T08:37:17.534Z",
+      "modified": "2022-03-30T09:53:39.213Z",
+      "headers": [{ "name": "Content-Type", "value": "application/json" }],
+      "params": [],
+      "body": {
+        "type": "json",
+        "raw": "{\n    \"name\":\"shivam\",\n    \"email\":\"shivam@gmail.com\",\n    \"password\":\"shivam\"\n}",
+        "form": []
+      },
+      "tests": []
+    },
+    {
+      "_id": "72011aa6-b921-4c88-b3cb-1b48a8fcf942",
+      "colId": "c749f07b-9ab6-42f5-9106-200559eeac02",
+      "containerId": "eb69219b-ffaa-4061-ae8a-12cb199351bc",
+      "name": "user login",
+      "url": "http://localhost:8080/api/auth/login",
+      "method": "POST",
+      "sortNum": 40000,
+      "created": "2022-03-26T15:01:18.821Z",
+      "modified": "2022-03-26T15:02:17.045Z",
+      "headers": [],
+      "params": [],
+      "body": {
+        "type": "json",
+        "raw": "{\n    \"email\":\"sandeepa@gmail.com\",\n    \"password\":\"kriti1233\"\n}",
+        "form": []
+      },
+      "tests": []
+    },
+    {
+      "_id": "90c86bca-7301-42d3-9d36-6659cee5cca5",
+      "colId": "c749f07b-9ab6-42f5-9106-200559eeac02",
+      "containerId": "eb69219b-ffaa-4061-ae8a-12cb199351bc",
+      "name": "Get user detail",
+      "url": "http://localhost:8080/api/auth/getuser",
+      "method": "POST",
+      "sortNum": 50000,
+      "created": "2022-03-28T08:35:50.670Z",
+      "modified": "2022-03-30T09:34:58.662Z",
+      "headers": [
+        {
+          "name": "auth-token",
+          "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjIzZjI4NWFmNTFhNTVhMDliNjgyOGFkIn0sImlhdCI6MTY0ODQ1MzkzNH0.zuTknXRst_vEOOdar0KXl4vpZKyKvtJdLQbDhSoFGIg"
+        }
+      ],
+      "params": [],
+      "tests": []
+    },
+    {
+      "_id": "eab1c946-6373-49d0-919f-bf1c20db13ff",
+      "colId": "c749f07b-9ab6-42f5-9106-200559eeac02",
+      "containerId": "6ef7ba79-a0c5-494e-a799-04c0762ef911",
+      "name": "Fetch all notes",
+      "url": "http://localhost:8080/api/notes/fetchallnotes",
+      "method": "GET",
+      "sortNum": 60000,
+      "created": "2022-03-30T09:38:53.550Z",
+      "modified": "2022-04-04T07:37:26.238Z",
+      "headers": [
+        {
+          "name": "auth-token",
+          "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjI0NDI4YTMzYWE0MTJkM2RkYjdlNTViIn0sImlhdCI6MTY0ODYzNDAxOX0.nY18P3QzHOz7gZ_wsqP2JPwc_Tsu1chcOu6_6PjtTrQ"
+        }
+      ],
+      "params": [],
+      "tests": []
+    },
+    {
+      "_id": "f376e3ea-4e57-46fd-bb44-69cc760625e0",
+      "colId": "c749f07b-9ab6-42f5-9106-200559eeac02",
+      "containerId": "6ef7ba79-a0c5-494e-a799-04c0762ef911",
+      "name": "Add new note",
+      "url": "http://localhost:8080/api/notes/addnote",
+      "method": "POST",
+      "sortNum": 70000,
+      "created": "2022-04-04T07:01:20.752Z",
+      "modified": "2022-04-04T07:37:22.724Z",
+      "headers": [
+        {
+          "name": "auth-token",
+          "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjI0NDI4YTMzYWE0MTJkM2RkYjdlNTViIn0sImlhdCI6MTY0ODYzNDAxOX0.nY18P3QzHOz7gZ_wsqP2JPwc_Tsu1chcOu6_6PjtTrQ"
+        },
+        { "name": "Content-Type", "value": "application/json" }
+      ],
+      "params": [],
+      "body": {
+        "type": "json",
+        "raw": "{\n    \"title\":\"My name is ritika\",\n    \"description\":\"ddsfsfsfsdfsdfsdfsdf a asj sdfdsfsdasd\",\n    \"tag\":\"today\"\n}",
+        "form": []
+      },
+      "tests": []
+    },
+    {
+      "_id": "51c51e44-8898-49bb-8ad8-c13d83284065",
+      "colId": "c749f07b-9ab6-42f5-9106-200559eeac02",
+      "containerId": "6ef7ba79-a0c5-494e-a799-04c0762ef911",
+      "name": "Update Note",
+      "url": "http://localhost:8080/api/notes/update/624a99bc9a3c90d0efbf2c3f",
+      "method": "PUT",
+      "sortNum": 80000,
+      "created": "2022-04-04T08:00:40.081Z",
+      "modified": "2022-04-04T08:15:02.347Z",
+      "headers": [
+        {
+          "name": "auth-token",
+          "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjI0NDI4YTMzYWE0MTJkM2RkYjdlNTViIn0sImlhdCI6MTY0ODYzNDAxOX0.nY18P3QzHOz7gZ_wsqP2JPwc_Tsu1chcOu6_6PjtTrQ"
+        },
+        { "name": "Content-Type", "value": "application/json" }
+      ],
+      "params": [],
+      "body": {
+        "type": "json",
+        "raw": "{\n    \"title\":\"My name is ritika\",\n    \"description\":\"ddsfsfsfsdfsdfsdfsdf a asj sdfdsfsdasd\",\n    \"tag\":\"today\"\n}",
+        "form": []
+      },
+      "tests": []
+    },
+    {
+      "_id": "7a28adb5-e883-45ed-b3a3-88478a9ae7c8",
+      "colId": "c749f07b-9ab6-42f5-9106-200559eeac02",
+      "containerId": "6ef7ba79-a0c5-494e-a799-04c0762ef911",
+      "name": "Delete a Note",
+      "url": "http://localhost:8080/api/notes/deletenote/624a99bc9a3c90d0efbf2c3f",
+      "method": "DELETE",
+      "sortNum": 90000,
+      "created": "2022-04-04T09:11:14.099Z",
+      "modified": "2022-04-04T09:23:16.014Z",
+      "headers": [
+        {
+          "name": "auth-token",
+          "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjI0NDI4YTMzYWE0MTJkM2RkYjdlNTViIn0sImlhdCI6MTY0ODYzNDAxOX0.nY18P3QzHOz7gZ_wsqP2JPwc_Tsu1chcOu6_6PjtTrQ"
+        },
+        { "name": "Content-Type", "value": "application/json" }
+      ],
+      "params": [],
+      "tests": []
+    }
+  ]
+}

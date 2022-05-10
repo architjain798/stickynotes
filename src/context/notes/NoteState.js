@@ -79,8 +79,28 @@ const NoteState = (props) => {
 
   const [data, setData] = useState(dataStatic);
 
+  //Add a Note
+  const addNote = () => {
+    let note = {
+      _id: "624aa0329a3c90d0efbf2c00",
+      user: "624428a33aa412d3ddb7e55ADDED",
+      title: "My name is ADDED",
+      description: "dwie wehk eihjwe djasdja sdajksdnas ADDED",
+      tag: "today ADDED",
+      date: "1649057842721",
+      __v: 0,
+    };
+    setData([...data, note]);
+  };
+
+  //Edit a Note
+  const editNote = (id) => {};
+
+  //Delete a Note
+  const deleteNote = (id) => {};
+
   return (
-    <NoteContext.Provider value={{ data, setData }}>
+    <NoteContext.Provider value={{ data, addNote, editNote, deleteNote }}>
       {props.children}
     </NoteContext.Provider>
   );
