@@ -40,5 +40,7 @@
   },
   "devDependencies": {
     "prisma": "^3.13.0"
-  }
+  },
+  "keywords": [],
+  "description": ""
 }
